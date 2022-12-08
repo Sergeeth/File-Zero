@@ -965,37 +965,38 @@ header
             width: 100%
             flex-direction: column
             .video-wrapper-play
-                width: calc( 100% + 48px )
                 margin-right: 0
             .item-customers-top
                 padding: 16px
                 height: fit-content
                 p   
                     height: fit-content
-                    font-style: normal
-                    font-weight: 400
                     font-size: 16px
                     line-height: 24px
-                    margin: 24px 0
+                    margin: 16px 0
 
     .other-customers
         grid-template-columns: 1fr
         grid-gap: 16px
         .item
-            display: flex
-            align-items: flex-start
-            justify-content: center
-            flex-direction: column
-            background: var(--color-white)
-            padding: 40px
-            height: 100%
+            padding: 16px
+            height: fit-content
             p   
-                height: fit-content
-                font-style: normal
-                font-weight: 400
-                font-size: 16px
+                font-size: 114px
                 line-height: 24px
-                margin-bottom: 32px
+                margin-bottom: 16px
                 span
                     font-weight: 600
 
+    .customers-details-a
+        .avatar
+            margin-right: 8px
+            width: 40px
+            height: 40px
+        .details
+            .name
+                font-size: 14px
+                line-height: 24px
+            .info
+                font-size: 12px
+                line-height: 16px
