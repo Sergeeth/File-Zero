@@ -1,0 +1,1011 @@
+:root
+    --color-white: #ffffff
+
+    --color-dark-blue: #062037
+    --color-dark-blue-border: rgba(6, 32, 55, 0.08)
+    --color-grey-blue: #7D90A1
+
+    --color-green-a: #5BD473
+    --color-green-b: #33C24F
+    --color-green-lite-a: #ECF3EE
+    --color-green-lite-b: #F4F8F5
+
+    --transition-a: .3s ease 
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    font-family: 'Inter Tight', sans-serif
+
+html
+    height: 100%
+
+body
+    background: var(--color-white)
+    min-height: 100%
+    height: 100%
+
+button
+    background: none
+    border: none
+    outline: none
+    cursor: pointer
+
+a
+    cursor: pointer
+    text-decoration: none
+
+.wrapper-content-page
+    width: 100%
+    height: 100%
+    padding-top: 88px
+    display: flex
+    flex-direction: column
+    overflow: auto
+
+.color-g-l-a
+    &.bg--a
+        background: var(--color-green-lite-a)
+
+.scroll-check-animation
+    padding: 72px 0
+    transition: padding 2s ease
+    &.active
+        padding: 64px 0
+
+        .anim-op-simple-elements-a
+            animation: slide-up 1s ease
+
+        .anim-op-multi-elements-a
+            > *
+                &:nth-child(1)
+                    animation: slide-up 1s ease
+                    animation-duration: 0
+                &:nth-child(2)
+                    animation: slide-up 1s ease
+                    animation-duration: 2s
+                &:nth-child(3)
+                    animation: slide-up 1s ease
+                    animation-duration: 3s
+                &:nth-child(4)
+                    animation: slide-up 1s ease
+                    animation-duration: 4s
+                    
+
+@keyframes slide-up
+    0%
+        transform: translateY(80px)
+        opacity: 0
+    100%
+        transform: translateY(0px)
+        opacity: 1
+
+.container
+    max-width: 1248px
+    width: 100%
+    padding: 0 24px
+    margin: auto
+
+header
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 0 24px
+    width: 100%
+    height: 88px
+    position: fixed
+    top: 0
+    z-index: 999
+    transition: padding 0.3s ease, height 0.5s ease
+    background: var(--color-green-lite-a)
+    border-bottom: 1px solid var(--color-dark-blue-border)
+    &.scroll
+        height: 72px
+        &::before
+            top: 71px
+        > .header-container
+            height: 72px
+    > .header-container
+        max-width: 1200px
+        width: 100%
+        height: 120px
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: height 0.5s ease
+        > .top-navigation-header
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: space-between
+            > .logo
+                z-index: 2
+                picture
+                    display: flex
+                    img
+                        height: 32px
+                
+            > .right-button
+                z-index: 2
+                display: flex
+                align-items: center
+                > .green-button-s1
+                    margin: 0 8px 0 -8px
+
+.bottom-navigation-header
+    max-width: 588px
+    width: 100%
+    isolation: isolate
+    position: absolute
+    nav
+        display: flex
+        align-items: center
+
+.nav-header-link
+    display: flex
+    align-items: center
+    justify-content: center
+
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 24px
+    color: var(--color-dark-blue)
+
+    border-radius: 8px
+    width: fit-content
+    padding: 4px 8px
+    transition: var(--transition-a)
+    &:not(:last-child)
+        margin-right: 16px
+    &:hover
+        background: var(--color-dark-blue-border)
+    &:active
+        background: var(--color-green-a)
+    img
+        width: 18px
+        height: 18px
+        &.right
+            margin-left: 6px
+
+    
+
+.green-button-s1
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: row
+    overflow: hidden
+    isolation: isolate
+    position: relative
+    transition: var(--transition-a)
+    flex: none
+
+    font-style: normal
+    font-weight: 600
+    font-size: 16px
+    line-height: 24px
+    white-space: nowrap
+    color: var(--color-dark-blue)
+    background: var(--color-green-a)
+    &.size--a
+        height: 48px
+        border-radius: 44px
+        padding: 24px
+        width: fit-content
+    &.size-b
+        padding: 0px 24px
+        border-radius: 8px
+        height: 72px
+    img, svg
+        width: 24px
+        height: 24px
+        &.right-ico
+            margin-left: 8px
+        &.left-ico
+            margin-right: 8px
+    &:hover
+        background: var(--color-green-b)
+
+.open-mob-menu
+    position: relative
+    border-radius: 40px
+    background: rgba(255, 255, 255, 1)
+    width: 40px
+    height: 40px
+    flex: none
+    display: none
+    span
+        position: absolute
+        border-radius: 10px
+        height: 2px
+        background: #0C131D
+        transition: var(--transition-a)
+        &:nth-child(1)
+            width: 20px
+            top: 13px
+            left: 10px
+        &:nth-child(2)
+            width: 20px
+            top: 19px
+            left: 10px
+        &:nth-child(3)
+            width: 14px
+            top: 25px
+            left: 16px
+    &.active
+        span
+            position: absolute
+            border-radius: 10px
+            height: 2px
+            background: #0C131D
+            &:nth-child(1)
+                width: 20px
+                top: 19px
+                left: 10px
+                transform: rotate(-45deg)
+            &:nth-child(2)
+                width: 0px
+                opacity: 0
+            &:nth-child(3)
+                width: 20px
+                top: 19px
+                left: 10px
+                transform: rotate(45deg)
+
+.card-agency-one-screen-index
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 24px
+    align-items: center
+    justify-content: center
+
+    > .details
+        display: grid
+        grid-template-columns: 1fr
+        grid-gap: 40px
+        h1
+            font-style: normal
+            font-weight: 600
+            font-size: 48px
+            line-height: 64px
+            color: var(--color-dark-blue)
+            span
+                text-decoration: underline
+        p
+            font-style: normal
+            font-weight: 400
+            font-size: 20px
+            line-height: 32px
+            color: var(--color-dark-blue)
+        .details-button
+            display: grid
+            grid-template-columns: 1fr 1fr 1fr
+            grid-gap: 24px
+            align-items: center
+            > .item-details
+                display: flex
+                flex-direction: column
+                .top
+                    display: flex
+                    align-items: center
+
+                    font-style: normal
+                    font-weight: 700
+                    font-size: 32px
+                    line-height: 48px
+                    color: var(--color-dark-blue)
+                    img
+                        margin-right: 8px
+                .title
+                    font-style: normal
+                    font-weight: 400
+                    font-size: 16px
+                    line-height: 24px
+                    color: var(--color-dark-blue)
+
+.card-agency-slider
+    display: flex
+    height: 100%
+    align-items: center
+    justify-content: center
+    position: relative
+    background: url("../../img/circle-star.svg")
+    background-repeat: no-repeat
+    background-position: center
+    background-size: contain
+    > .item-card
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        overflow: hidden
+
+        position: relative
+        width: 320px
+        height: fit-content
+        background: var(--color-white)
+        border: 1px solid var(--color-green-lite-b)
+        border-radius: 8px
+        animation: item-card-s-agency 8s infinite
+        &::after
+            user-select: none
+            pointer-events: none
+            content: ""
+            position: absolute
+            width: 140px
+            height: 600px
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(111, 159, 201, 0.08) 100%)
+            animation: after-card-s-agency 8s infinite
+
+        .header
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: space-between
+            padding: 16px
+            background: var(--color-dark-blue)
+            .agency-info
+                display: flex
+                align-items: center
+                .details
+                    display: flex
+                    flex-direction: column
+                    .name
+                        display: flex
+                        align-items: center
+                        font-style: normal
+                        font-weight: 600
+                        font-size: 16px
+                        line-height: 19px
+                        color: var(--color-white)
+                        margin-bottom: 4px
+                    .tag
+                        font-style: normal
+                        font-weight: 500
+                        font-size: 12px
+                        line-height: 15px
+                        color: var(--color-green-a)
+                .avatar
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    width: 44px
+                    height: 44px
+                    overflow: hidden
+                    border: 1px solid var(--color-green-a)
+                    border-radius: 8px
+                    margin-right: 12px
+                    img
+                        width: 1005px
+                        height: 100%
+                        object-fit: cover
+            .fit-in
+                font-style: normal
+                font-weight: 500
+                font-size: 12px
+                line-height: 16px
+                text-align: right
+                text-transform: uppercase
+                color: var(--color-white)
+                span
+                    color: var(--color-green-a)
+        .duo-details
+            width: 100%
+            display: flex
+            &:not(:last-child)
+                border-bottom: 1px solid var(--color-dark-blue-border)
+                
+            .info-card-a
+                padding: 16px
+                display: flex
+                flex-direction: column
+                justify-content: center
+                flex: 1
+                &:not(:last-child)
+                    border-right: 1px solid var(--color-dark-blue-border)
+                > .title
+                    margin-bottom: 4px
+                    font-style: normal
+                    font-weight: 400
+                    font-size: 12px
+                    line-height: 16px
+                    color: var(--color-grey-blue)
+                > .details
+                    display: flex
+                    align-items: center
+
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 24px
+                    color: var(--color-dark-blue)
+                    img
+                        margin-right: 6px
+                    span
+                        margin-right: 6px
+                        color: var(--color-grey-blue)
+
+.ico-verification
+    &::after
+        content: ""
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 0C11.1174 0 10.6123 0.385727 10.3268 0.954538C9.92157 1.76202 9.71894 2.16577 9.58474 2.25414C9.41505 2.36587 9.42208 2.36399 9.21926 2.35197C9.05886 2.34246 8.68177 2.09403 7.92758 1.59718C7.39573 1.2468 6.76514 1.16496 6.00037 1.6065C5.23436 2.04876 4.99036 2.63704 5.02887 3.27412C5.08333 4.17523 5.11056 4.62579 5.03851 4.76977C4.94759 4.95147 4.9522 4.94686 4.77051 5.03781C4.62654 5.10988 4.17593 5.08271 3.27472 5.02836C2.63777 4.98996 2.04961 5.23399 1.60742 5.99988C1.16567 6.76503 1.2478 7.39588 1.59863 7.92791C2.09577 8.68183 2.34434 9.05879 2.35387 9.21931C2.3659 9.42213 2.36771 9.41537 2.2559 9.58502C2.16741 9.71929 1.76365 9.92153 0.956127 10.326C0.386436 10.6114 0 11.1166 0 12C0 12.8828 0.385931 13.388 0.954996 13.6734C1.76244 14.0784 2.16616 14.2809 2.25456 14.4151C2.36633 14.5848 2.36445 14.5777 2.35247 14.7806C2.343 14.941 2.09461 15.3182 1.59783 16.0726C1.24767 16.6043 1.16599 17.2348 1.60742 17.9994C2.04946 18.765 2.63736 19.0092 3.27404 18.971C4.17532 18.9169 4.62596 18.8898 4.76986 18.9619C4.95154 19.0528 4.94679 19.0481 5.03776 19.2298C5.10981 19.3736 5.08281 19.8243 5.0288 20.7257C4.99066 21.3623 5.23481 21.9501 6.00037 22.3921C6.76514 22.8336 7.39573 22.7518 7.92757 22.4014C8.68186 21.9045 9.059 21.656 9.21947 21.6466C9.42229 21.6346 9.4154 21.6327 9.58504 21.7445C9.71926 21.833 9.92157 22.2367 10.3262 23.0442C10.6116 23.6137 11.1168 24 12 24C12.8842 24 13.3896 23.6128 13.6748 23.0422C14.0785 22.2346 14.2803 21.8309 14.4146 21.7422C14.5842 21.6304 14.5777 21.6321 14.7805 21.6441C14.9412 21.6536 15.3181 21.9023 16.0719 22.3996C16.604 22.7507 17.235 22.833 18.0004 22.3911C18.7645 21.95 19.0091 21.3636 18.9722 20.7286C18.9196 19.8266 18.8934 19.3756 18.9654 19.232C19.0565 19.0504 19.0512 19.0557 19.2328 18.9647C19.3763 18.8927 19.8273 18.919 20.7292 18.9716C21.3644 19.0087 21.9508 18.7641 22.392 17.9999C22.8337 17.2349 22.7517 16.6042 22.4011 16.0722C21.904 15.3181 21.6555 14.9411 21.646 14.7806C21.634 14.5777 21.6322 14.5845 21.744 14.4149C21.8325 14.2807 22.2363 14.0785 23.0437 13.674C23.6135 13.3887 24 12.8834 24 12C24 11.116 23.613 10.6107 23.0426 10.3254C22.235 9.92149 21.8313 9.71955 21.7427 9.58522C21.6308 9.41561 21.6326 9.42212 21.6446 9.2193C21.6542 9.05867 21.9029 8.68187 22.4003 7.92825C22.7516 7.39603 22.834 6.76491 22.392 5.99939C21.9507 5.23492 21.3639 4.99039 20.7285 5.02767C19.8267 5.08057 19.3758 5.10702 19.2321 5.03501C19.0505 4.94396 19.0557 4.94913 18.9646 4.76749C18.8926 4.62385 18.9191 4.17298 18.9721 3.27124C19.0094 2.63569 18.7649 2.04889 18.0004 1.60748C17.235 1.16561 16.604 1.2479 16.0719 1.59897C15.3182 2.09624 14.9413 2.34487 14.7807 2.35441C14.5779 2.36646 14.5846 2.36824 14.4149 2.25643C14.2806 2.1679 14.0785 1.76412 13.6742 0.956574C13.3889 0.386635 12.8836 0 12 0Z' fill='%235BD473'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.9285 14.5716L12.9286 14.5717L11 16.5003L6.5 12.0002L8.42859 10.0717L10.9999 12.643L16.1429 7.5L18.0715 9.42859L12.9285 14.5716Z' fill='%23062037'/%3E%3C/svg%3E%0A")
+        width: 18px
+        height: 18px
+        background-size: cover
+        display: flex
+        margin-left: 4px
+        flex: none
+
+@keyframes after-card-s-agency
+    0%
+        transform: translateX(30px) rotate(30deg)
+    50%
+        transform: translateX(-30px) rotate(30deg)
+    100%
+        transform: translateX(30px) rotate(30deg)
+
+@keyframes item-card-s-agency
+    0%
+        transform: skewX(-8deg) scale(1.18)
+        box-shadow: 4px 4px 0px -2px var(--color-green-a)
+        
+    50%
+        transform: skewX(8deg) scale(1.18)
+        box-shadow: -4px 4px 0px -2px var(--color-green-a)
+    100%
+        transform: skewX(-8deg) scale(1.18)
+        box-shadow: 4px 4px 0px -2px var(--color-green-a)
+
+.heading-block-a
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-bottom: 40px
+    h2
+        width: 100%
+        font-style: normal
+        font-weight: 600
+        font-size: 64px
+        line-height: 88px
+        text-align: center
+        text-transform: capitalize
+        color: var(--color-dark-blue)
+        span
+            text-decoration: underline
+
+    p
+        margin-top: 32px
+        max-width: 588px
+        width: 100%
+        font-style: normal
+        font-weight: 400
+        font-size: 20px
+        line-height: 32px
+        color: var(--color-dark-blue)
+        text-align: center
+
+.video-wrapper-play
+    width: 100%
+    aspect-ratio: 16 / 9
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    overflow: hidden
+    background: var(--color-green-lite-a)
+    video, img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+    .play-circle
+        background: rgba(6, 32, 55, 0.24)
+        position: absolute
+        display: flex
+        align-items: center
+        justify-content: center
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        transition: var(--transition-a)
+        z-index: 2
+        .play-sticky
+            background: rgba(6, 32, 55, 0.56)
+            backdrop-filter: blur(12px)
+            width: 180px
+            height: 180px
+            border-radius: 180px
+            position: absolute
+            display: flex
+            align-items: center
+            justify-content: center
+            &::before
+                content: ""
+                background-image: url("data:image/svg+xml,%3Csvg width='58' height='58' viewBox='0 0 58 58' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 22.0955C55.3333 25.1642 58 26.6985 58 29C58 31.3015 55.3333 32.8358 50 35.9045L20 53.1657C14.6667 56.2344 12 57.7687 10 56.6179C8 55.4672 8 52.3985 8 46.2612L8 11.7388C8 5.60147 8 2.53281 10 1.38206C12 0.231317 14.6667 1.76565 20 4.83431L50 22.0955Z' fill='white'/%3E%3C/svg%3E%0A")
+                background-size: cover
+                background-repeat: no-repeat
+                display: flex
+            &.size--a
+                width: 180px
+                height: 180px
+                &::before
+                    width: 58px
+                    height: 58px
+            &.size--b
+                width: 120px
+                height: 120px
+                &::before
+                    width: 40px
+                    height: 40px
+
+.class-agencies-wrapper
+    display: grid
+    grid-gap: 24px
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    > .item
+        text-decoration: none
+        padding: 40px
+        display: flex
+        flex-direction: column
+        background: var(--color-white)
+        img
+            width: 56px
+            height: 56px
+            margin-bottom: 24px
+        h3
+            font-style: normal
+            width: 100%
+            font-weight: 600
+            font-size: 24px
+            line-height: 32px
+            text-transform: capitalize
+            color: var(--color-dark-blue)
+            margin-bottom: 16px
+        p
+            font-style: normal
+            width: 100%
+            font-weight: 400
+            font-size: 16px
+            line-height: 24px
+            margin-bottom: 24px
+            color: var(--color-dark-blue)
+            flex: 1
+
+.development-made-wrapper
+    display: grid
+    grid-gap: 24px
+    grid-template-columns: 1fr 1fr 1fr
+    > .item
+        text-decoration: none
+        padding: 40px
+        display: flex
+        flex-direction: column
+        background: var(--color-green-lite-a)
+        .top
+            display: flex
+            align-items: center
+            position: relative
+            margin-bottom: 32px
+            .num
+                width: 32px
+                height: 32px
+                flex: none
+                border-radius: 32px
+                margin-right: 16px
+                display: flex
+                align-items: center
+                justify-content: center
+                font-style: normal
+                font-weight: 600
+                font-size: 16px
+                line-height: 24px
+                text-transform: capitalize
+                color: var(--color-white)
+                background: var(--color-dark-blue)
+            .arrow
+                width: 100%
+                height: 24px
+                background-image: url("data:image/svg+xml,%3Csvg width='407' height='24' viewBox='0 0 407 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M397.515 3.51479L406 12.0001L397.515 20.4854' stroke='%23062037' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M0.999863 12L404.029 12' stroke='%23062037' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+                background-position: right 
+        h3
+            font-style: normal
+            width: 100%
+            font-weight: 600
+            font-size: 24px
+            line-height: 32px
+            text-transform: capitalize
+            color: var(--color-dark-blue)
+            margin-bottom: 16px
+        p
+            font-style: normal
+            width: 100%
+            font-weight: 400
+            font-size: 16px
+            line-height: 24px
+            color: var(--color-dark-blue)
+
+.link-style-a
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 24px
+    text-decoration-line: underline
+    text-transform: capitalize
+    color: var(--color-dark-blue)
+
+.customers-details-a
+    display: flex
+    align-items: center
+    flex-direction: row
+    .avatar
+        margin-right: 12px
+        width: 48px
+        height: 48px
+        border-radius: 100px
+    .details
+        display: flex
+        flex-direction: column
+        .name
+            font-style: normal
+            font-weight: 600
+            font-size: 16px
+            line-height: 24px
+            display: flex
+            color: var(--color-dark-blue)
+        .info
+            font-style: normal
+            font-weight: 400
+            font-size: 14px
+            line-height: 24px
+            color: var(--color-grey-blue)
+    
+.customers-wrapper
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: 24px
+    .top
+        display: flex
+        align-items: center
+        .video-wrapper-play
+            max-width: 792px
+            width: 100%
+            flex: none
+            margin-right: 24px
+        .item-customers-top
+            display: flex
+            align-items: flex-start
+            justify-content: center
+            flex-direction: column
+            background: var(--color-white)
+            padding: 40px
+            height: 100%
+            > img
+                height: 24px
+            p   
+                height: fit-content
+                font-style: normal
+                font-weight: 400
+                font-size: 20px
+                line-height: 32px
+                margin: 32px 0
+                span
+                    font-weight: 600
+
+.other-customers
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    grid-gap: 24px
+    .item
+        display: flex
+        align-items: flex-start
+        justify-content: center
+        flex-direction: column
+        background: var(--color-white)
+        padding: 40px
+        height: 100%
+        p   
+            height: fit-content
+            font-style: normal
+            font-weight: 400
+            font-size: 16px
+            line-height: 24px
+            margin-bottom: 32px
+            span
+                font-weight: 600
+
+.question-wrapper
+    max-width: 792px
+    width: 100%
+    margin: auto
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: 24px
+    .question-item
+        display: grid
+        grid-template-columns: 1fr
+        grid-gap: 24px
+        &:not(:last-child)
+            padding-bottom: 24px
+            border-bottom: 1px solid var(--color-dark-blue-border)
+        .question-btn
+            display: flex
+            justify-content: space-between
+            cursor: pointer
+            color: var(--color-dark-blue)
+            font-style: normal
+            font-weight: 600
+            font-size: 24px
+            line-height: 32px
+            &:hover
+                text-decoration: underline
+            &::after
+                content: ""
+                width: 32px
+                height: 32px
+                flex: none
+                background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='32' y='32' width='32' height='32' rx='16' transform='rotate(-180 32 32)' fill='%23062037'/%3E%3Cpath d='M16 9L16 23' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M24 17L16 9' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 17L16 9' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+                background-size: cover
+                background-repeat: no-repeat
+                transition: var(--transition-a)
+            &.active
+                &::after
+                    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='32' y='32' width='32' height='32' rx='16' transform='rotate(-180 32 32)' fill='%235BD473'/%3E%3Cpath d='M16 9L16 23' stroke='%23062037' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M24 17L16 9' stroke='%23062037' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 17L16 9' stroke='%23062037' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+                    transform: rotate(180deg)
+            &.active + .answer-hide
+                display: flex
+        .answer-hide
+            font-style: normal
+            font-weight: 400
+            font-size: 20px
+            line-height: 32px
+            color: var(--color-dark-blue)
+            display: none
+
+.blog-items-wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    grid-gap: 24px
+
+.article-item-a
+    display: flex
+    flex-direction: column
+    .img-cover
+        display: flex
+        align-items: center
+        justify-content: center
+        overflow: hidden
+        aspect-ratio: 16/10
+        margin-bottom: 16px
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+    .details
+        font-style: normal
+        font-weight: 500
+        font-size: 14px
+        line-height: 24px
+        display: flex
+        align-items: center
+        margin-bottom: 16px
+        color: var(--color-grey-blue)
+        span
+            &:not(:last-child)
+                margin-right: 8px
+    h3
+        font-style: normal
+        font-weight: 600
+        font-size: 24px
+        margin-bottom: 16px
+        line-height: 32px
+        color: var(--color-dark-blue)
+
+.anchor-link
+    width: 0
+    height: 0
+    transform: translateY(-120px)
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1024px)
+
+    .open-mob-menu
+        display: flex
+        margin-left: 12px
+
+    header
+        padding: 0 16px
+        height: 72px
+        &::before
+            top: 71px
+        &.active-mob-menu
+            padding: 0 32px
+            > .header-container
+                > .top-navigation-header
+                    > .right-button
+                        > .chameleon-menu-btn-s1
+                            opacity: 0
+                            user-select: none
+                            pointer-events: none
+        > .header-container
+            height: 72px
+            flex-direction: column
+            justify-content: flex-start
+            > .top-navigation-header
+                flex: none
+                height: 72px
+                > .logo
+                    height: 28px
+                    width: 125px
+                > .right-button
+                    > .header-link-s1
+                        display: none
+            > .top-navigation-header
+                height: 72px
+            > .bottom-navigation-header
+                height: 0
+                top: 72px
+                background: rgba(14, 15, 22, 0.9)
+                padding: 0 32px
+                gap: 40px
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                width: 100%
+                overflow: auto
+                transition: height 0.5s ease, padding 0.5s ease
+                &.active
+                    padding: 32px
+                    height: calc( 100vh - 72px )
+                > .mobile-button
+                    display: flex
+                > nav
+                    flex-direction: column
+                    gap: 0
+                    > .header-link-s1
+                        width: 100%
+                        display: flex
+                        align-items: center
+                        justify-content: flex-start
+                        height: 64px
+                        margin-left: 0
+                        color: #fff !important
+                        &::after
+                            content: none
+                        &:not(:last-child)
+                            border-bottom: 1px solid rgba(95, 122, 160, 0.08)
+
+    // ///////////////
+
+    .wrapper-content-page
+        margin-top: 72px
+        padding-top: 40px
+
+    .heading-block-a
+        margin-bottom: 24px
+        h2
+            font-size: 32px
+            line-height: 48px
+        p
+            margin-top: 16px
+            font-size: 14px
+            line-height: 24px
+
+    .scroll-check-animation
+        padding: 40px 0
+        transition: padding 2s ease
+        &.active
+            padding: 32px 0
+
+    .video-wrapper-play
+        width: calc( 100% + 48px )
+        margin-left: -24px
+        aspect-ratio: 4 / 5
+        object-fit: cover
+
+    .class-agencies-wrapper
+        grid-template-columns: 1fr 1fr
+        grid-gap: 16px
+        > .item
+            padding: 16px
+            img
+                width: 40px
+                height: 40px
+                margin-bottom: 16px
+            h3
+                font-size: 16px
+                line-height: 24px
+                margin-bottom: 8px
+            p
+                font-weight: 400
+                font-size: 12px
+                line-height: 16px
+                margin-bottom: 8px
+
+    .link-style-a
+        font-size: 14px
+        line-height: 24px
+
+    .development-made-wrapper
+        grid-gap: 16px
+        grid-template-columns: 1fr
+        > .item
+            padding: 16px
+            .top
+                margin-bottom: 16px
+                .num
+                    width: 24px
+                    height: 24px
+                    margin-right: 8px
+                    font-size: 12px
+                    line-height: 16px
+            h3
+                font-size: 16px
+                line-height: 24px
+                margin-bottom: 8px
+                br
+                    display: none
+            p
+                font-size: 12px
+                line-height: 16px
+
+    .customers-wrapper
+        grid-gap: 16px
+        .top
+            width: 100%
+            flex-direction: column
+            .video-wrapper-play
+                width: calc( 100% + 48px )
+                margin-right: 0
+                margin-left: -24px
+            .item-customers-top
+                display: flex
+                align-items: flex-start
+                justify-content: center
+                flex-direction: column
+                background: var(--color-white)
+                padding: 40px
+                height: 100%
+                > img
+                    height: 24px
+                p   
+                    height: fit-content
+                    font-style: normal
+                    font-weight: 400
+                    font-size: 20px
+                    line-height: 32px
+                    margin: 32px 0
+                    span
+                        font-weight: 600
+
+    .other-customers
+        grid-template-columns: 1fr
+        grid-gap: 16px
+        .item
+            display: flex
+            align-items: flex-start
+            justify-content: center
+            flex-direction: column
+            background: var(--color-white)
+            padding: 40px
+            height: 100%
+            p   
+                height: fit-content
+                font-style: normal
+                font-weight: 400
+                font-size: 16px
+                line-height: 24px
+                margin-bottom: 32px
+                span
+                    font-weight: 600
+
