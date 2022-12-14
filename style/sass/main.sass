@@ -17,9 +17,13 @@
     margin: 0
     box-sizing: border-box
     font-family: 'Inter Tight', sans-serif
-
+// https://sergeeth.github.io
 html
     height: 100%
+
+img
+    user-select: none
+    pointer-events: none
 
 body
     background: var(--color-white)
@@ -74,6 +78,18 @@ a
                 &:nth-child(4)
                     animation: slide-up 1s ease
                     animation-duration: 4s
+                &:nth-child(5)
+                    animation: slide-up 1s ease
+                    animation-duration: 5s
+                &:nth-child(6)
+                    animation: slide-up 1s ease
+                    animation-duration: 6s
+                &:nth-child(7)
+                    animation: slide-up 1s ease
+                    animation-duration: 7s
+                &:nth-child(8)
+                    animation: slide-up 1s ease
+                    animation-duration: 8s
                     
 
 @keyframes slide-up
@@ -208,6 +224,76 @@ header
             margin-right: 8px
     &:hover
         background: var(--color-green-b)
+
+.picture-points-wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 24px
+    width: 100%
+    .image-box
+        display: flex
+        align-items: center
+        justify-content: center
+        position: relative
+        img
+            position: absolute
+            width: 100%
+            height: 100%
+            object-fit: contain
+    ul
+        display: grid
+        grid-template-columns: 1fr
+        grid-gap: 16px
+
+        li
+            padding: 16px
+            background: var(--color-white)
+            list-style: none
+            font-style: normal
+            font-weight: 500
+            font-size: 20px
+            line-height: 32px
+            text-transform: capitalize
+            color: var(--color-dark-blue)
+            display: inline-flex
+            align-items: center
+            width: 100%
+            height: fit-content
+            &::before
+                content: ""
+                flex: none
+                display: flex
+                background: url("../../img/green-check-mark.svg")
+                width: 24px
+                height: 24px
+                margin-right: 16px
+
+.trusted-brand-wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 
+    grid-gap: 24px
+    width: 100%
+    height: 88px
+    > .item
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        position: relative
+        img
+            width: 64%
+            height: 64%
+            object-fit: contain
+        p
+            width: 100%
+            font-style: normal
+            font-weight: 500
+            font-size: 16px
+            line-height: 24px
+            text-transform: uppercase
+            display: flex
+            align-items: center
+            color: var(--color-grey-blue)
 
 .mobile-menu-button-s1
     display: flex
@@ -407,6 +493,7 @@ header
         transition: var(--transition-a)
 
 .agency-item-slider
+    cursor: pointer
     display: flex
     flex-direction: column
     position: relative
@@ -509,7 +596,7 @@ header
 
 .card-agency-slider
     display: flex
-    height: 100%
+    height: 440px
     align-items: center
     justify-content: center
     position: relative
@@ -592,8 +679,8 @@ header
                     border-radius: 8px
                     margin-right: 12px
                     img
-                        width: 1005px
-                        height: 100%
+                        width: 44px
+                        height: 44px
                         object-fit: cover
             .fit-in
                 font-style: normal
@@ -965,7 +1052,7 @@ header
                 height: 32px
                 flex: none
                 background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='32' y='32' width='32' height='32' rx='16' transform='rotate(-180 32 32)' fill='%23062037'/%3E%3Cpath d='M16 9L16 23' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M24 17L16 9' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 17L16 9' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
-                background-size: cover
+                background-size: contain
                 background-repeat: no-repeat
                 transition: var(--transition-a)
             &.active
