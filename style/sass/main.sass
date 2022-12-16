@@ -38,6 +38,10 @@ button
     outline: none
     cursor: pointer
 
+section 
+    overflow: hidden
+    flex: none
+
 a
     cursor: pointer
     text-decoration: none
@@ -297,6 +301,39 @@ header
             display: flex
             align-items: center
             color: var(--color-grey-blue)
+
+.slick-next, .slick-prev
+    font-size: 0 !important
+    line-height: 0 !important
+    top: calc( 50% - 20px ) !important
+    width: 40px !important
+    height: 40px !important
+    transform: none !important
+    cursor: pointer !important
+    color: transparent !important
+    border: none !important
+    outline: 0 !important
+    background: 0 0 !important
+    z-index: 10
+    &:active
+        opacity: .4
+    &::before
+        content: "" !important
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40C31.0457 40 40 31.0457 40 20Z' fill='white'/%3E%3Cpath d='M17 26L23 20L17 14' stroke='%23062037' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") !important
+        background-size: cover !important
+        width: 40px !important
+        height: 40px !important
+        font-size: 0 !important
+        line-height: 0 !important
+        opacity: 1 !important
+        color: none !important
+        display: flex
+
+.slick-next
+    right: -20px !important
+.slick-prev
+    left: -20px !important
+    rotate: 180deg !important
 
 .mobile-menu-button-s1
     display: flex
@@ -1209,6 +1246,9 @@ header
         height: 1140px
 
 @media screen and (max-width: 1024px)
+    .picture-points-wrapper 
+        ul
+            grid-gap: 8px
     .picture-points-wrapper
         grid-template-columns: 1fr
         .image-box
