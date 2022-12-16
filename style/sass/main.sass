@@ -1171,6 +1171,15 @@ header
         font-size: 14px
         line-height: 24px
 
+    .trusted-brand-wrapper
+        height: 80px
+        > .item
+            p
+                font-size: 14px
+            &:nth-child(1)
+                
+                width: 180px
+
     header
         > .header-container
             max-width: 1024px
@@ -1197,6 +1206,23 @@ header
         height: 1140px
 
 @media screen and (max-width: 1024px)
+    .picture-points-wrapper
+        grid-template-columns: 1fr
+        .image-box
+            display: none
+        ul
+            li
+                font-size: 16px
+                line-height: 24px
+    .trusted-brand-wrapper
+        height: 64px
+        grid-gap: 0
+        > .item
+            p
+                font-size: 12px
+                line-height: 16px
+            &:nth-child(1)
+                width: 140px
 
     .agency-item-slider
         padding: 24px 0
@@ -1504,6 +1530,11 @@ header
             box-shadow: 12px 8px 0px -2px var(--color-green-a)
 
 @media screen and (max-width: 767px)
+    .trusted-brand-wrapper
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+        > .item
+            &:nth-child(1)
+                display: none
     .banner-wrapper-a
         padding: 24px 16px
         .backed
