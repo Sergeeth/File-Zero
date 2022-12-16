@@ -72,6 +72,10 @@ a {
   padding-top: 88px;
 }
 
+.calendly-inline-widget.calendly-mobile {
+  overflow: hidden !important;
+}
+
 .color-g-l-a.bg--a {
   background: var(--color-green-lite-a);
 }
